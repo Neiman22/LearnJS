@@ -8,5 +8,4 @@ console.log (result2); //null если отмена ввода
 console.log ('Your name is Artem');
 
 let result3 = confirm ('Are you frontender')
-console.log (result3);
-
+console.log (result3);// true or false
