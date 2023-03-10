@@ -60,3 +60,37 @@ console.log ('\n')
 
 for (let i = 0; i < 5; i++) console.log (i) //0...4
 for (let i = 0; i < 5; ++i) console.log (i) //0...4
+console.log ('\n')
+
+for (let i = 2; i <= 10; i++) {
+    if (i % 2 == 0) {
+        console.log (i);
+    }
+}
+console.log ('\n')
+
+let v = 0
+while (v < 3) {
+    console.log (`Number: ${v}`);
+    v++;
+}
+console.log ('\n')
+
+let number = prompt('Введите больше 100');;
+while (number) {
+    if (number < 100) {
+        number = prompt('Еще раз');
+    } else {
+        break;
+    }
+} 
+console.log ('\n')
+
+
+nextPrime:
+for (let i = 2; i <= 100; i++) {
+  for (let j = 2; j < i; j++) {
+    if (i % j == 0) continue nextPrime;
+  }
+  console.log( i );
+}
