@@ -4,4 +4,4 @@ function deepCount (array) {
     }, 0)
 };
 
-console.log (deepCount([1, 2, [3, 4, [5]]]))
+console.log (deepCount([1, 2, [3, 4, [5]]])) //7
