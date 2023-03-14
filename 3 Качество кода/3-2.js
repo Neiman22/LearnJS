@@ -39,8 +39,8 @@ function pow(x, n) {
     return result;
 }
 
-let x = prompt("x?",'');
-let n = prompt("n?",'');
+//let x = prompt("x?",'');
+//let n = prompt("n?",'');
 
 if (n <= 0) {
   alert(`Степень ${n} не поддерживается, 
