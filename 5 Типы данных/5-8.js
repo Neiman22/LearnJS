@@ -1,4 +1,7 @@
-//WeakMap и WeakSet
+"use strict";
+console.log("WeakMap и WeakSet:");
+console.log('\n');
+
 let john = { name: "John" };
 let array = [ john ];
 john = null;
