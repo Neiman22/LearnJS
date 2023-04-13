@@ -14,7 +14,6 @@ console.log(str.toUpperCase()); //HELLO ARTEM
 //null, undefined не имеют методов
 
 //Task
-
 let str2 = "Привет";
 str2.test = 5;
 console.log(str2.test);
