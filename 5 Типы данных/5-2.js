@@ -87,7 +87,7 @@ console.log(Math.min(3, 5, -10, 0, 1)); //-10
 console.log(Math.pow(5, 3)); //125
 console.log('\n');
 
-//Task
+//Task1
 /*
 let num2 = +prompt("Enter a number2", '');
 let num3 = +prompt("Enter a number3", '');
@@ -96,11 +96,13 @@ if (isFinite(num2) && isFinite(num3)) {
 }
 */
 
+//Task2
 console.log(1.35.toFixed(1)); //1.4
 console.log(6.35.toFixed(1)); //6.3
 console.log((6.35 * 10).toFixed(20)); //6.4!!!
-console.log(Math.round(6.35 * 10) / 10)
+console.log(Math.round(6.35 * 10) / 10) //6.4!!!
 
+//Task3
 function readNumber() {
   let num;
   do {
@@ -112,10 +114,12 @@ function readNumber() {
   return +num
 }
 
+//Task4
 function random(min, max) {
   return min + Math.random() * (max - min);
 }
 
+//Task5
 function randomInteger() {
   let rand = min + Math.random() * (max - min + 1);
   return Math.floor(rand);

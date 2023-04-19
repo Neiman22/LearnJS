@@ -87,17 +87,19 @@ for (let i = 65; i <= 220; i++) {
 console.log(str6);
 console.log('\n');
 
-//Task
+//Task1
 const ucFirst = str => str[0].toUpperCase() + str.slice(1)
 console.log(ucFirst("вася")); // "Вася"
 console.log('\n');
 
+//Task2
 const checkSpam = str => str.toLowerCase().includes('viagra') || str.toLowerCase().includes('xxx')
 console.log(checkSpam('buy ViAgRA now')); //true
 console.log(checkSpam('free xxxxx')); //true
 console.log(checkSpam("innocent rabbit")); //false
 console.log('\n');
 
+//Task3
 function truncate (str, maxLength) {
   return (str.length > maxLength) ? 
     str.slice(0, maxLength - 1) + '...' : str;
@@ -106,6 +108,7 @@ console.log(truncate("Вот, что мне хотелось бы сказать
 console.log(truncate("Всем привет!", 20)); //"Всем привет!"
 console.log('\n');
 
+//Task4
 const extractCurrencyValue = (str) => +str.slice(1);
 console.log(extractCurrencyValue('$120')); //120;
 

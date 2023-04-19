@@ -132,7 +132,7 @@ console.log('\n');
 
 //arr.flat(depth)/arr.flatMap(fn) создаёт новый плоский массив из многомерного массива
 
-//Task
+//Task1
 function camelize (str) {
   return str
     .split('-')
@@ -150,29 +150,18 @@ console.log(camelize("list-style-image")); //'listStyleImage';
 console.log(camelize("-webkit-transition")); // 'WebkitTransition';
 console.log('\n');
 
-let arr14 = [5, 2, 1, -10, 8];
-console.log(arr14.sort((a, b) => b - a));
-console.log('\n');
-
+//Task2
+let arr8 = [5, 3, 8, 1];
+let filtered = filterRange(arr8, 1, 4);
+console.log(filtered); //3, 1
+console.log(arr8); //5,3,8,1
 function filterRange(arr, a, b) {
   return arr.filter(item => item >= a && item <= b); //[8, 5, 2, 1, -10]
 }
 console.log('\n');
 
-const copySorted = (arr) => arr.slice().sort();
-let arr15 = ["HTML", "JavaScript", "CSS"];
-let sorted = copySorted(arr15);
-console.log(arr15);
-console.log(sorted);
-console.log('\n');
-
-let arr8 = [5, 3, 8, 1];
-let filtered = filterRange(arr8, 1, 4);
-console.log(filtered); //3, 1
-console.log(arr8); //5,3,8,1
-console.log('\n');
-
-
+//Task3
+let arr9 = [5, 3, 8, 2, 9, 7, 3, 1];
 function filterRangeInPlace(arr, a, b) {
   for (let i = 0; i < arr.length; i++) {
     let val = arr[i];
@@ -182,6 +171,49 @@ function filterRangeInPlace(arr, a, b) {
     }
   }
 }
-let arr9 = [5, 3, 8, 2, 9, 7, 3, 1];
 filterRangeInPlace(arr9, 1, 4);
-console.log(arr9); // [3, 2, 3, 1]
+console.log(arr9); // [3, 2, 3, 1];
+
+//Task4
+let arr14 = [5, 2, 1, -10, 8];
+console.log(arr14.sort((a, b) => b - a)); // 8, 5, 2, 1, -10
+console.log('\n');
+
+//Task5
+const copySorted = (arr) => arr.slice().sort();
+let arr15 = ["HTML", "JavaScript", "CSS"];
+let sorted = copySorted(arr15);
+console.log(arr15);
+console.log(sorted);
+console.log('\n');
+
+//Task6
+function Calculator() {
+  this.methods = {
+    '+': (a, b) => a + b,
+    '-': (a, b) => a - b,
+  }
+
+  this.calculate = function (str) {
+    let arr = str.split(' ');
+    let a = +arr[0];
+    let b = +arr[2];
+    let math = arr[1];
+    return this.methods[math](a, b);
+  }
+  this.addMethod = function(name, func) {
+    this.methods[name] = func;
+  }
+}
+let calc = new Calculator;
+console.log( calc.calculate("35 + 7") ); //42
+console.log( calc.calculate("35 - 7") ); //28
+
+let powerCalc = new Calculator;
+powerCalc.addMethod("*", (a, b) => a * b);
+powerCalc.addMethod("/", (a, b) => a / b);
+powerCalc.addMethod("**", (a, b) => a ** b);
+console.log(powerCalc.calculate("2 ** 3")); //8
+
+
+
