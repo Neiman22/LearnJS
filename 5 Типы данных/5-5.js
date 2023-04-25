@@ -133,6 +133,7 @@ console.log('\n');
 //arr.flat(depth)/arr.flatMap(fn) создаёт новый плоский массив из многомерного массива
 
 //Task1
+console.log('Task1');
 function camelize (str) {
   return str
     .split('-')
@@ -151,6 +152,7 @@ console.log(camelize("-webkit-transition")); // 'WebkitTransition';
 console.log('\n');
 
 //Task2
+console.log('Task2');
 let arr8 = [5, 3, 8, 1];
 let filtered = filterRange(arr8, 1, 4);
 console.log(filtered); //3, 1
@@ -161,6 +163,7 @@ function filterRange(arr, a, b) {
 console.log('\n');
 
 //Task3
+console.log('Task3');
 let arr9 = [5, 3, 8, 2, 9, 7, 3, 1];
 function filterRangeInPlace(arr, a, b) {
   for (let i = 0; i < arr.length; i++) {
@@ -173,13 +176,16 @@ function filterRangeInPlace(arr, a, b) {
 }
 filterRangeInPlace(arr9, 1, 4);
 console.log(arr9); // [3, 2, 3, 1];
+console.log('\n');
 
 //Task4
+console.log('Task4');
 let arr14 = [5, 2, 1, -10, 8];
 console.log(arr14.sort((a, b) => b - a)); // 8, 5, 2, 1, -10
 console.log('\n');
 
 //Task5
+console.log('Task5');
 const copySorted = (arr) => arr.slice().sort();
 let arr15 = ["HTML", "JavaScript", "CSS"];
 let sorted = copySorted(arr15);
@@ -188,6 +194,7 @@ console.log(sorted);
 console.log('\n');
 
 //Task6
+console.log('Task6');
 function Calculator() {
   this.methods = {
     '+': (a, b) => a + b,
@@ -214,6 +221,82 @@ powerCalc.addMethod("*", (a, b) => a * b);
 powerCalc.addMethod("/", (a, b) => a / b);
 powerCalc.addMethod("**", (a, b) => a ** b);
 console.log(powerCalc.calculate("2 ** 3")); //8
+console.log('\n');
 
+//Task7
+console.log('Task7');
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
 
+let users2 = [ vasya, petya, masha ];
+let names2 = users2.map(el => el.name)
+console.log( names2 ); // [Вася, Петя, Маша]
+console.log('\n');
 
+//Task8
+console.log('Task8');
+let vasya2 = { name: "Вася", surname: "Пупкин", id: 1 };
+let petya2 = { name: "Петя", surname: "Иванов", id: 2 };
+let masha2 = { name: "Маша", surname: "Петрова", id: 3 };
+
+let users3 = [ vasya2, petya2, masha2 ];
+  let usersMapped = users3.map((el) => ({
+  fullName: `${el.name} ${el.surname}`,
+  id: el.id
+  })); 
+console.log( usersMapped[0].id ); // 1
+console.log( usersMapped[0].fullName ) // Вася Пупкин
+console.log('\n');
+
+//Task9
+console.log('Task9');
+let vasya3 = { name: "Вася", age: 25 };
+let petya3 = { name: "Петя", age: 30 };
+let masha3 = { name: "Маша", age: 28 };
+let names4 = [ vasya, petya, masha ];
+const sortByAge = (names4) => names4.sort((a, b) => a.age - b.age);
+sortByAge(names4);
+console.log(names4[0].name); // Вася
+console.log(names4[1].name); // Маша
+console.log(names4[2].name); // Петя
+console.log('\n');
+
+//Task9
+console.log('Task9');
+function shuffle (array) {
+  for (let i = array.length - 1; i > 0; i--){
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+let count = {
+  '123': 0,
+  '132': 0,
+  '213': 0,
+  '231': 0,
+  '321': 0,
+  '312': 0
+};
+
+for (let i = 0; i < 1000000; i++) {
+  let array = [1, 2, 3];
+  shuffle(array);
+  count[array.join('')]++;
+}
+
+for (let key in count) {
+  console.log(`${key}: ${count[key]}`
+)};
+console.log('\n');
+
+//Task10
+console.log('Task10');
+let vasya4 = { name: "Вася", age: 25 };
+let petya4 = { name: "Петя", age: 30 };
+let masha4 = { name: "Маша", age: 29 };
+let arr16 = [ vasya, petya, masha ];
+
+const getAverageAge = (arr) => (arr.reduce((curr, el) => curr + el.age, 0) / arr.length).toFixed(0);
+console.log( getAverageAge(arr16) ); // (25 + 30 + 29) / 3 = 28
