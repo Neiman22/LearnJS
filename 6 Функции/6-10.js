@@ -104,5 +104,16 @@ let user5 = {
   },
 }
 askPassword(user5.loginOk.bind(user5), user5.loginFail.bind(user5));
+console.log('\n');
 
-
+//Task5
+console.log('Task5');
+let user6 = {
+  name: "John",
+  login(result) {
+    console.log( this.name + (result ? ' loggen in' : ' failed to log in'));
+  }
+}
+askPassword(() => user6.login(true), () => user6.login(false));
+askPassword(user6.login.bind(user6, true), user6.login.bind(user6, false));
+console.log('\n');
