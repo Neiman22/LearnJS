@@ -90,3 +90,25 @@ console.log(err.stack); //stack
 
 console.log( err instanceof FormatError );
 console.log( err instanceof SyntaxError );
+
+//Task1
+console.log('Task2');
+function getCommonCharacterCount(str1, str2) {
+  let count = 0;
+  let arr1 = str1.split('');
+  let arr2 = str2.split('');
+  for (let i = 0; i < arr1.length; i++ ) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j]) {
+        count++;
+        arr1.splice(i, 1);
+        i--;
+        arr2.splice(j, 1);
+      }
+    }
+  }
+  return count;
+};
+
+console.log(getCommonCharacterCount('aabcc', 'adcaa'));
+console.log(getCommonCharacterCount('abca', 'xyzbac'));
