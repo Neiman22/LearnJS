@@ -68,4 +68,15 @@ console.log('\n');
 
 //Task2
 console.log('Task2');
+function getDNSStats(array) {
+  let result = {};
+  let subArr = [];
+  for (let i = 0; i < array.length; i++) {
+    subArr.push(array[i].split('.').reverse());
+  }
+  
+  return subArr;
+}
+console.log(getDNSStats(['code.yandex.ru', 'music.yandex.ru', 'yandex.ru']));
+//{'.ru': 3, '.ru.yandex': 3, '.ru.yandex.code': 1,'.ru.yandex.music': 1}
 console.log('\n');
