@@ -46,3 +46,28 @@ fetch('/article/promise-chaining/user.json')
     console.log('\n');
   });
 */
+
+//Task1
+console.log('Task1');
+function encodeLine (str) {
+  let array = str.split('');
+  let count = 0;
+  let subarr = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === array[i + 1]) {
+      count++;
+    } else {
+      if (count !== 0) {
+        subarr.push(count + 1);
+        subarr.push(array[i]);
+        count = 0;
+      } else {
+        subarr.push(array[i]);
+        count = 0;
+      }
+    }
+  }
+  return subarr.join('');
+}
+console.log(encodeLine('aabbbc')); //'2a3bc'
+console.log('\n');

@@ -70,12 +70,20 @@ console.log('\n');
 console.log('Task2');
 function getDNSStats(array) {
   let result = {};
-  let subArr = [];
-  for (let i = 0; i < array.length; i++) {
-    subArr.push(array[i].split('.').reverse());
-  }
   
-  return subArr;
+  for (let i = 0; i < array.length; i++) {
+    const subArr = array[i].split('.').reverse();
+    let dns = '';
+    for (let j = 0; j < subArr.length; j++) {
+      dns += `.${subArr[j]}`;
+      if(result[dns]) {
+        result[dns] += 1;
+      } else { 
+        result[dns] = 1;
+      }
+    }
+  }
+  return result;
 }
 console.log(getDNSStats(['code.yandex.ru', 'music.yandex.ru', 'yandex.ru']));
 //{'.ru': 3, '.ru.yandex': 3, '.ru.yandex.code': 1,'.ru.yandex.music': 1}
