@@ -11,7 +11,7 @@ export {sayBye as bye}
 
 //Экспорт по умолчанию
 //Заметим, в файле может быть не более одного export default
-export default class {
+export default class NewUser{
   constructor(name) {
     this.name = name;
     console.log('New User: ' + name);
